@@ -7,7 +7,7 @@ html, body{
 }
 body{
 	background:#e9e8e8;
-	font-family: "Roboto","Helvetica Neue",Helvetica,Arial, sans-serif;
+	font-family:"Roboto","Helvetica Neue",Helvetica,Arial, sans-serif;
 	line-height:1.4;
 }
 .container{
@@ -41,7 +41,7 @@ body{
 }
 .clearfix:after,.clearfix:before{display:table;content:" "}.clearfix:after{clear:both}
 .info{
-	width: 25px;
+	width:25px;
 	height:25px;
 	line-height:22px;
 	border:2px solid #616161;
@@ -55,32 +55,13 @@ body{
 	margin-top:15px;
 }
 .sizeInfo{
-	position:fixed;
+	position:absolute;
 	top:0;
 	left:0;
-	bottom:0;
-	right:0;
+	width:100%;
 	background:#fff;
 	background:rgba(255,255,255,.98);
-	-moz-transform:translateY(100%);
-	-webkit-transform:translateY(100%);
-	transform:translateY(100%);
-	-moz-transition:0.35s;
-	-webkit-transition:0.35s;
-	transition:0.35s;
-}
-.sizeInfo.active{
-	-moz-transform:translateY(0);
-	-webkit-transform:translateY(0);
-	transform:translateY(0);
-}
-.siInner{
-	overflow-y:auto;
-	position:absolute;
-	width:100%;
-	height:100%;
-	top:0;
-	left:0;
+	display:none; 
 }
 .size-container{
 	max-width:850px;
@@ -102,15 +83,41 @@ body{
 }
 .close{
 	position:fixed;
-	top:0;
-	right:16px;
-	width:40px;
-	height:40px;
-	background:#fff;
-	border-bottom-left-radius:10px;
-	cursor:pointer;
-	z-index:999;
-	box-shadow:-4px 3px 5px rgba(0,0,0,0.1);
+    top:5px;
+    right:5px;
+    width:40px;
+    height:40px;
+    background:#fff;
+    border-radius:40px;
+    cursor:pointer;
+    z-index:999;
+    box-shadow:0 0 8px rgba(0,0,0,0.15);
+	opacity:0.7;
+	-moz-transition:0.35s;
+	-webkit-transition:0.35s;
+	transition:0.35s;
+}
+.close:hover{
+	opacity:1;
+}
+.close:before, .close:after{
+	content:'';
+	width:20px;
+	height:2px;
+	background:#000;
+	position:absolute;
+	top:18px;
+	left:10px;
+}
+.close:before{
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg);
+}
+.close:after{
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+	transform:rotate(-45deg);
 }
 @media(min-width:1400px){
 	.size-container{
